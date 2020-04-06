@@ -2,6 +2,10 @@ baseurl = "/"
 title = "CodeNameAkshay's Blog"
 theme = "ghostwriter"
 
+[Author]
+    name = "Akshay Maurya"
+    profile = "https://www.linkedin.com/in/akshay-maurya-b56664170/"
+
 [Params]
     mainSections = ["post"]
     intro = true
