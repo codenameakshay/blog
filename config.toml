@@ -1,10 +1,14 @@
 baseurl = "/"
-title = "My blog"
-theme = "novela"
+title = "CodeNameAkshay's Blog"
+theme = "ghostwriter"
 
 [Params]
     mainSections = ["post"]
     intro = true
+    headline = "CodeNameAkshay's Blog"
+    description = "Welcome to my blog. I will try to update it regularly, so that you can checkout different apps, projects that I built and I will also try to upload some tutorials on how I made them. Hope you have a great day!"
+    linkedin = "https://www.linkedin.com/in/akshay-maurya-b56664170/"
+    facebook = "https://www.facebook.com/akshay.maurya.180"
     github = "https://github.com/codenameakshay/"
     email = "akshaymaurya3006@gmail.com"
     opengraph = true
@@ -14,3 +18,8 @@ theme = "novela"
 
 [Permalinks]
     post = "/:filename/"
+
+[Privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+    useSessionStorage = false
