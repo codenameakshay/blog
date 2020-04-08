@@ -1,6 +1,7 @@
 baseurl = "/"
 title = "CodeNameAkshay's Blog"
 theme = "ghostwriter"
+paginate = 6
 
 [Author]
     name = "Akshay Maurya"
@@ -8,6 +9,12 @@ theme = "ghostwriter"
 
 [Params]
     mainSections = ["post"]
+    contentTypeName = "content/post"
+    themeColor = "orange"
+    showLanguageSelector = false
+    showMenuItems = 2
+    fullWidthTheme = false
+    centerTheme = false
     intro = true
     headline = "CodeNameAkshay's Blog"
     description = "Welcome to my blog. I will try to update it regularly, so that you can checkout different apps, projects that I built and I will also try to upload some tutorials on how I made them. Hope you have a great day!"
@@ -27,3 +34,29 @@ theme = "ghostwriter"
     anonymizeIP = true
     respectDoNotTrack = true
     useSessionStorage = false
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "CodeNameAkshay"
+    subtitle = "Welcome to my blog. I will try to update it regularly, so that you can checkout different apps, projects that I built and I will also try to upload some tutorials on how I made them. Hope you have a great day!"
+    owner = "Akshay Maurya"
+    keywords = "hack"
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "Terminal"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "showcase"
+        name = "Showcase"
+        url = "/showcase"
