@@ -26,6 +26,8 @@ paginate = 6
     shareTwitter = true
     dateFormat = "Mon, Jan 2, 2006"
     enableEmoji = true
+    readingTime = true
+    readingTimeText = "Estimated reading time:"
 
 [Permalinks]
     post = "/:year/:month/:day/:filename/"
