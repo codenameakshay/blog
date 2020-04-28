@@ -205,7 +205,7 @@ To customise the loader you can simply edit the content between the `<style>` ta
 
 ![](/images/loader/3.png)
 
-I edited the color of the loader as well its speed.
+I edited the color of the loader as well as its speed.
 
 ```
 <head>
