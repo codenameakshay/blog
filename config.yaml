@@ -1,6 +1,6 @@
-baseURL: "https://example.com"
+baseURL: "http://codenameakshay.tech/blog"
 languageCode: "en-us"
-title: "Hugo Novela"
+title: "CodeNameAkshay's Blog"
 pygmentsstyle: 'monokai'
 taxonomies:
   author: authors
