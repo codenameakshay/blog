@@ -1,6 +1,6 @@
 baseurl = "/"
 title = "CodeNameAkshay's Blog"
-theme = "ghostwriter"
+theme = "dream"
 paginate = 6
 
 [Author]

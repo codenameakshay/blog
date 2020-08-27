@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Going from Figma to Flutter in just 5 minutes &middot; Akshay Maurya</title>
+        <meta name="description" content="When I started developing apps with Flutter, there was this thing that one has to develop UI only using code. This makes it quite hard to visualise how the app will look beforehand. To solve this problem, Figma comes to the rescue. Using it, one can design beautiful UIs and assets for there application and then export them as images, which then can be used in Flutter using Image.asset objects. But there is one limitation to this that, even for like changing the color of button, you have to again export the image, import it into assets, and then rebuild the app to include those assets.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.68.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Going from Figma to Flutter in just 5 minutes">
+<meta property="og:description" content="When I started developing apps with Flutter, there was this thing that one has to develop UI only using code. This makes it quite hard to visualise how the app will look beforehand. To solve this problem, Figma comes to the rescue. Using it, one can design beautiful UIs and assets for there application and then export them as images, which then can be used in Flutter using Image.asset objects. But there is one limitation to this that, even for like changing the color of button, you have to again export the image, import it into assets, and then rebuild the app to include those assets.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2020/05/13/figma/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="CodeNameAkshay&#39;s Blog" href="/">CodeNameAkshay&#39;s Blog</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss" style="color: rgb(21, 21, 21);"></i></a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Facebook" title="Facebook" href="https://www.facebook.com/akshay.maurya.180" rel="me">
+                                <i class="fa fa-facebook" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/codenameakshay/" rel="me">
+                                <i class="fa fa-github-alt" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/akshay-maurya-b56664170/" rel="me">
+                                <i class="fa fa-linkedin" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:akshaymaurya3006@gmail.com">
+                                <i class="fa fa-envelope" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="https://www.github.com/codenameakshay">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Mail" href="mailto:ak@codenameakshay.tech">Mail</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Going from Figma to Flutter in just 5 minutes</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2020-05-13" itemprop="datePublished">Wed, May 13, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Akshay Maurya</a>
+            </span>
+        </span>
+    </p>
+    
+        <p class="post-reading post-line">
+            <span>Estimated reading time: 3 min</span>
+        </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p><img src="/images/figma/hero.jpg" alt=""></p>
+<p>When I started developing apps with Flutter, there was this thing that one has to develop UI only using <strong>code</strong>. This makes it quite hard to visualise how the app will look beforehand. To solve this problem, <strong>Figma</strong> comes to the rescue. Using it, one can design beautiful UIs and assets for there application and then export them as images, which then can be used in Flutter using <em><code>Image.asset</code></em> objects. But there is one limitation to this that, even for like changing the color of button, you have to again export the image, import it into assets, and then rebuild the app to include those assets. But, today I will show you one trick to convert Figma components and Frames directly to Flutter code whic then uses <strong><code>Custom Painter</code></strong> to draw those things in the application. So, if you need to change the properties of the asset, you can simply change them in the code.</p>
+<p>So, let&rsquo;s get started.</p>
+<h1 id="step-1-get-figma-api-key">Step-1 Get Figma API key</h1>
+<p>For this step, first open you figma account on a browser, then click on your account name.
+<img src="/images/figma/1.jpg" alt="">
+This will take you to the Account page. Then click the settings tab, to go the settings page.
+<img src="/images/figma/2.jpg" alt="">
+Then in the Personal Access Token section click on <code>Create a new personal token</code>.
+<img src="/images/figma/3.jpg" alt="">
+Then generate your API key and make sure to copy it in a safe location because this is the last time Figma is letting you see it. We need it later on in this tutorial.</p>
+<h1 id="step-2-design-your-assets-or-ui-in-figma">Step-2 Design your assets or UI in Figma</h1>
+<p><img src="/images/figma/Frame1.png" alt="">
+In this step, you just need to draw the assets that you need. I am going to draw a button for demo purposes.</p>
+<p><img src="/images/figma/6.jpg" alt=""></p>
+<h1 id="step-3-open-figma-to-flutter-app">Step-3 Open Figma to Flutter app</h1>
+<p>Now after you have designed all your assets and converted them into <strong><code>components</code></strong>, just go to <a href="https://aloisdeniel.github.io/figma-to-flutter/">https://aloisdeniel.github.io/figma-to-flutter/</a>. Now in this website simply type up your <em><code>API key</code></em> in the <code>authentication token</code> section.
+<img src="/images/figma/4.jpg" alt=""></p>
+<h1 id="step-4-getting-your-file-code">Step-4 Getting your file code</h1>
+<p>Now go to the file in Figma in which you have drawn your asset,</p>
+<p><img src="/images/figma/6.jpg" alt=""></p>
+<p>then go to the address bar and copy the highlighted text between the slashes.</p>
+<p><img src="/images/figma/5.jpg" alt="">
+This is your <em><code>file_key</code></em>.
+Now enter this <em><code>file_key</code></em> in the given section, in the Figma to Flutter app.
+<img src="/images/figma/7.jpg" alt=""></p>
+<h1 id="step-5-generating-component-code">Step-5 Generating component code</h1>
+<p>Now click <em><code>Load components</code></em> and then select the components from the list that pops up below, which you wanna import.
+<img src="/images/figma/9.jpg" alt="">
+Then click generate Dart code, to load the code in the code tab.
+<img src="/images/figma/8.jpg" alt="">
+Now just click copy to clipboard, to copy this code.
+<img src="/images/figma/10.jpg" alt=""></p>
+<h1 id="step-6-importing-code-into-flutter">Step-6 Importing code into Flutter</h1>
+<p>Now, open your Flutter project in your editor and then create a new file in your <code>lib</code> folder, named <em><code>button.dart</code></em>.
+<img src="/images/figma/11.jpg" alt="">
+Then simply paste your code into this file and save it. Now you just need to import this file in your <em><code>main.dart</code></em>, or wherever, you want to use it, in this case it&rsquo;s <em><code>main.dart</code></em>. Then simply import the component widget by it&rsquo;s name like I have in the code below.</p>
+<script type="application/javascript" src="https://gist.github.com/codenameakshay/e13721ac6b77c3d85335791ff2bf42a8.js"></script>
+
+<script type="application/javascript" src="https://gist.github.com/codenameakshay/c933eed0e783357705847f1a9ac0e0c3.js"></script>
+
+<blockquote>
+<p>Note - You may also need to include images that you used in Figma, in your assets in Flutter.
+<img src="/images/figma/12.jpg" alt=""></p>
+</blockquote>
+<h1 id="step-7-build-your-app">Step-7 Build your app</h1>
+<p><img src="/images/figma/13.jpg" alt=""></p>
+<p>Now, as you can see this is the result.</p>
+<figure>
+    <img src="https://media.giphy.com/media/dpnfPvaCIHBrW/giphy-downsized.gif"/> 
+</figure>
+
+<p>This looks far from perfect, but it was an easy and fast way to simply import assets from Figma into Flutter, and with a little bit of tweaking here and there, it will be perfect.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Going%20from%20Figma%20to%20Flutter%20in%20just%205%20minutes&url=%2f2020%2f05%2f13%2ffigma%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"  style="color: rgb(21, 21, 21);"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f2020%2f05%2f13%2ffigma%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"  style="color: rgb(21, 21, 21);"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f2020%2f05%2f13%2ffigma%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"  style="color:rgb(21, 21, 21);"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+</div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="site-title-wrapper">
+            <h1 class="site-title">
+                <a title="CodeNameAkshay&#39;s Blog" href="/">CodeNameAkshay&#39;s Blog</a>
+            </h1>
+            <a class="button-square button-jump-top js-jump-top" href="#">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+
+        <p class="footer-copyright">
+            <span>&copy; 2020 <a href="https://codenameakshay.tech">CodeNameAkshay</a> /
+                Powered by <a href="https://gohugo.io/">Hugo</a></span>
+        </p>
+        <p class="footer-copyright">
+            <span><a href="https://codenameakshay.tech">www.codenameakshay.tech</a></span>
+        </p>
+        
+    </div>
+</footer>
+
+<script src="/js/jquery-1.11.3.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/scripts.js"></script>
+</body>
+
+</html>

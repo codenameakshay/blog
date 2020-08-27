@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CodeNameAkshay&#39;s Blog</title>
+    <link>/</link>
+    <description>Recent content on CodeNameAkshay&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 13 May 2020 14:34:44 +0530</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Going from Figma to Flutter in just 5 minutes</title>
+      <link>/2020/05/13/figma/</link>
+      <pubDate>Wed, 13 May 2020 14:34:44 +0530</pubDate>
+      
+      <guid>/2020/05/13/figma/</guid>
+      <description>When I started developing apps with Flutter, there was this thing that one has to develop UI only using code. This makes it quite hard to visualise how the app will look beforehand. To solve this problem, Figma comes to the rescue. Using it, one can design beautiful UIs and assets for there application and then export them as images, which then can be used in Flutter using Image.asset objects. But there is one limitation to this that, even for like changing the color of button, you have to again export the image, import it into assets, and then rebuild the app to include those assets.</description>
+    </item>
+    
+    <item>
+      <title>Creating a simple Telegram Bot with Python</title>
+      <link>/2020/04/28/telepybot/</link>
+      <pubDate>Tue, 28 Apr 2020 19:44:51 +0530</pubDate>
+      
+      <guid>/2020/04/28/telepybot/</guid>
+      <description>Automating a simple Telegram bot can let you serve different types of data to various people including channels and group of which you are a part. I use my bot to serve my channel members Tech related news directly. Today I am going to share on how you can make such a simple EchoBot and deploy it on Heroku, so that it works 24x7. So without any further ado, let&amp;rsquo;s get started.</description>
+    </item>
+    
+    <item>
+      <title>How to add a loading screen to your Flutter websites/webapps?</title>
+      <link>/2020/04/28/loading/</link>
+      <pubDate>Tue, 28 Apr 2020 16:11:14 +0530</pubDate>
+      
+      <guid>/2020/04/28/loading/</guid>
+      <description>Flutter allows one to create beautiful websites and all, but there is one flaw that the initial loading time, it takes is huge (1~2 seconds). This time allows android and iOS apps to show SplashScreens, but there is no such thing for websites. So today, I will show you an easy way to quickly add a CSS loader to your website.
+Getting Started First make sure that you have a prebuilt website on which you want to apply this effect.</description>
+    </item>
+    
+    <item>
+      <title>An app to track Coronavirus and show Country-based Stats</title>
+      <link>/2020/04/16/corona/</link>
+      <pubDate>Thu, 16 Apr 2020 00:38:14 +0530</pubDate>
+      
+      <guid>/2020/04/16/corona/</guid>
+      <description>Today, I am going to share an app which I made using Flutter to show that stats for COVID-19 or as people commonly call it the CoronaVirus.
+Stay Safe Coronavirus Tracker This app basically tracks the total cases of infected persons (real-time data), in all countries with total deaths and recovered cases too. It features beautiful UI with custom animations. It has charts, global info, symtomps and other COVID-19 related info and much more stuff.</description>
+    </item>
+    
+    <item>
+      <title>How to install Linux ON Windows?</title>
+      <link>/2020/04/08/wsl/</link>
+      <pubDate>Wed, 08 Apr 2020 12:01:51 +0530</pubDate>
+      
+      <guid>/2020/04/08/wsl/</guid>
+      <description>Most people (devs) that use windows sometimes feel that if they had linux it would have been a lot easier. But due to the list of Apps on Windows, its features or just the complication of process of switching to Linux hold them back to do so. But recently Windows 10 released an update which allows to install Linux on Windows (Windows Subsystem for Linux). Today we will install WSL and see how to use it.</description>
+    </item>
+    
+    <item>
+      <title>Flutter: How to start?</title>
+      <link>/2020/04/06/flutter/</link>
+      <pubDate>Mon, 06 Apr 2020 16:45:05 +0530</pubDate>
+      
+      <guid>/2020/04/06/flutter/</guid>
+      <description>In today&amp;rsquo;s world, everything has mostly shifted to the mobile side of the computers rather than the bulky desktops that we used a decade earlier. That&amp;rsquo;s because it promises to do most things (and sometimes more) that those old PCs could do, at increased mobility and therefore ease of access. Hence, the increase in the requirement of ways to enhance that experience. Many ways are there to create Android as well as iOS apps out there, but one of them stands out as Flutter needs only one language for both.</description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>/2020/04/05/welcome/</link>
+      <pubDate>Sun, 05 Apr 2020 15:23:57 +0530</pubDate>
+      
+      <guid>/2020/04/05/welcome/</guid>
+      <description>Welcome to my blog. I will try to update it regularly, so that you can checkout different apps, projects that I built and I will also try to upload some tutorials on how I made them. Hope you have a great day!
+About me Hello, if we are meeting for the first time, I am Akshay Maurya, an engineering undergrad from Delhi, India. I am pursing engineering from Netaji Subhas University of Technology, Delhi in Electronics and Communications branch.</description>
+    </item>
+    
+    <item>
+      <title>Akshay Maurya</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Hello, if we are meeting for the first time, I am Akshay Maurya, an engineering undergrad from Delhi, India. I am pursing engineering from Netaji Subhas University of Technology, Delhi in Electronics and Communications branch. In my YouTube channel, I regularly upload videos on how to make various electronics projects. I also upload photography and video editing tutorials on my Insatgram page. You can also checkout my LInkedIn page for contacting me.</description>
+    </item>
+    
+  </channel>
+</rss>

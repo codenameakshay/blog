@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>How to add a loading screen to your Flutter websites/webapps? &middot; Akshay Maurya</title>
+        <meta name="description" content="Flutter allows one to create beautiful websites and all, but there is one flaw that the initial loading time, it takes is huge (1~2 seconds). This time allows android and iOS apps to show SplashScreens, but there is no such thing for websites. So today, I will show you an easy way to quickly add a CSS loader to your website.
+Getting Started First make sure that you have a prebuilt website on which you want to apply this effect.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.68.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="How to add a loading screen to your Flutter websites/webapps?">
+<meta property="og:description" content="Flutter allows one to create beautiful websites and all, but there is one flaw that the initial loading time, it takes is huge (1~2 seconds). This time allows android and iOS apps to show SplashScreens, but there is no such thing for websites. So today, I will show you an easy way to quickly add a CSS loader to your website.
+Getting Started First make sure that you have a prebuilt website on which you want to apply this effect.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2020/04/28/loading/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="CodeNameAkshay&#39;s Blog" href="/">CodeNameAkshay&#39;s Blog</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss" style="color: rgb(21, 21, 21);"></i></a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Facebook" title="Facebook" href="https://www.facebook.com/akshay.maurya.180" rel="me">
+                                <i class="fa fa-facebook" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/codenameakshay/" rel="me">
+                                <i class="fa fa-github-alt" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/akshay-maurya-b56664170/" rel="me">
+                                <i class="fa fa-linkedin" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:akshaymaurya3006@gmail.com">
+                                <i class="fa fa-envelope" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="https://www.github.com/codenameakshay">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Mail" href="mailto:ak@codenameakshay.tech">Mail</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">How to add a loading screen to your Flutter websites/webapps?</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2020-04-28" itemprop="datePublished">Tue, Apr 28, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Akshay Maurya</a>
+            </span>
+        </span>
+    </p>
+    
+        <p class="post-reading post-line">
+            <span>Estimated reading time: 5 min</span>
+        </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Flutter allows one to create beautiful websites and all, but there is one flaw that the initial loading time, it takes is <strong>huge</strong> (1~2 seconds). This time allows android and iOS apps to show <code>SplashScreens</code>, but there is no such thing for websites. So today, I will show you an easy way to quickly add a CSS loader to your website.</p>
+<p><img src="/images/loader/1.png" alt=""></p>
+<h1 id="getting-started">Getting Started</h1>
+<p>First make sure that you have a prebuilt website on which you want to apply this effect. Building a website in Flutter is very easy and you can search for various tutorials online for it. Then you need to make or search for the CSS Loader that you want to use.
+Here are some website that you can use to find one -</p>
+<ul>
+<li><a href="https://projects.lukehaas.me/css-loaders/">projects.lukehaas.me</a></li>
+<li><a href="https://codepen.io/cassidoo/pen/KRdLvL">codepen.io</a></li>
+<li><a href="https://freefrontend.com/css-loaders/">freefrontend.com</a></li>
+<li><a href="https://tobiasahlin.com/spinkit/">tobiasahlin.com</a></li>
+</ul>
+<p>I will be going to use the second one.</p>
+<p><img src="/images/loader/2.png" alt=""></p>
+<h1 id="step-2-importing-the-loader">Step-2 Importing the loader</h1>
+<p>To import the loader, simply copy the <code>HTML</code> to your <code>project/build/web/index.html</code> file.
+You can insert it between the <code>&lt;body&gt;&lt;/body&gt;</code> tag as shown below.</p>
+<pre><code>&lt;body&gt;
+  &lt;-- Content already here --&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;dash uno&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dash dos&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dash tres&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;dash cuatro&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;-- Content already here --&gt;
+&lt;/body&gt;
+</code></pre><p>Then copy the <code>CSS</code> code and then paste it inside the <code>&lt;style&gt;</code> tag inside the <code>&lt;head&gt;</code> tag as shown below.</p>
+<blockquote>
+<p>Note- If the <code>CSS</code> tab has <code>SCSS</code> content inside it you can simply compile it to <code>CSS</code> online by using this website <a href="https://www.sass2css.online/">https://www.sass2css.online/</a></p>
+</blockquote>
+<pre><code>&lt;head&gt;
+  &lt;style&gt;
+    .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.dash {
+  margin: 0 15px;
+  width: 35px;
+  height: 15px;
+  border-radius: 8px;
+  background: #FF2CBD;
+  box-shadow: 0 0 10px 0 #FECDFF;
+}
+
+.uno {
+  margin-right: -18px;
+  transform-origin: center left;
+  animation: spin 3s linear infinite;  
+}
+
+.dos {
+  transform-origin: center right;
+  animation: spin2 3s linear infinite;
+  animation-delay: .2s;
+}
+
+.tres {
+  transform-origin: center right;
+  animation: spin3 3s linear infinite;
+  animation-delay: .3s;
+}
+
+.cuatro {
+  transform-origin: center right;
+  animation: spin4 3s linear infinite;
+  animation-delay: .4s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  30% {
+    transform: rotate(370deg);
+  }
+  35% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-180deg);
+  }
+  35% {
+    transform: rotate(-190deg);
+  }
+  40% {
+    transform: rotate(-180deg);
+  }
+  78% {
+    transform: rotate(-180deg);
+  }
+  95% {
+    transform: rotate(-360deg);
+  }
+  98% {
+    transform: rotate(-370deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  27% {
+    transform: rotate(0deg);  
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  45% {
+    transform: rotate(190deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  62% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  80% {
+    transform: rotate(370deg);
+  }
+  85% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  38% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-360deg);
+  }
+  65% {
+    transform: rotate(-370deg);
+  }
+  75% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+  &lt;/style&gt;
+&lt;/head&gt;
+</code></pre><p>Now your loader has been imported and you can simply run the <code>index.html</code> in your browser to verify it.</p>
+<h1 id="step-3-customising-the-loader">Step-3 Customising the loader</h1>
+<p>To customise the loader you can simply edit the content between the <code>&lt;style&gt;</code> tag as shown below.</p>
+<p><img src="/images/loader/3.png" alt=""></p>
+<p>I edited the color of the loader as well as its speed.</p>
+<pre><code>&lt;head&gt;
+  &lt;style&gt;
+.loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.dash {
+  margin: 0 15px;
+  width: 35px;
+  height: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 #FECDFF;
+}
+
+.uno {
+  margin-right: -18px;
+  transform-origin: center left;
+  background: darkturquoise;
+  animation: spin 3s linear infinite;  
+}
+
+.dos {
+  transform-origin: center right;
+  background: deepskyblue;
+  animation: spin2 3s linear infinite;
+  animation-delay: .2s;
+}
+
+.tres {
+  transform-origin: center right;
+  background: dodgerblue;
+  animation: spin3 3s linear infinite;
+  animation-delay: .3s;
+}
+
+.cuatro {
+  transform-origin: center right;
+  background: darkcyan;
+  animation: spin4 3s linear infinite;
+  animation-delay: .4s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(360deg);
+  }
+  30% {
+    transform: rotate(370deg);
+  }
+  35% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-180deg);
+  }
+  35% {
+    transform: rotate(-190deg);
+  }
+  40% {
+    transform: rotate(-180deg);
+  }
+  78% {
+    transform: rotate(-180deg);
+  }
+  95% {
+    transform: rotate(-360deg);
+  }
+  98% {
+    transform: rotate(-370deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  27% {
+    transform: rotate(0deg);  
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  45% {
+    transform: rotate(190deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  62% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  80% {
+    transform: rotate(370deg);
+  }
+  85% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  38% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-360deg);
+  }
+  65% {
+    transform: rotate(-370deg);
+  }
+  75% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+  &lt;/style&gt;
+&lt;/head&gt;
+</code></pre><h1 id="finishing-touches">Finishing touches</h1>
+<p>Now that you know how to import any CSS loader to your Flutter website you can try experimenting with different effects and even make your site more interesting by using JS.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=How%20to%20add%20a%20loading%20screen%20to%20your%20Flutter%20websites%2fwebapps%3f&url=%2f2020%2f04%2f28%2floading%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"  style="color: rgb(21, 21, 21);"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f2020%2f04%2f28%2floading%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"  style="color: rgb(21, 21, 21);"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f2020%2f04%2f28%2floading%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"  style="color:rgb(21, 21, 21);"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+</div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="site-title-wrapper">
+            <h1 class="site-title">
+                <a title="CodeNameAkshay&#39;s Blog" href="/">CodeNameAkshay&#39;s Blog</a>
+            </h1>
+            <a class="button-square button-jump-top js-jump-top" href="#">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+
+        <p class="footer-copyright">
+            <span>&copy; 2020 <a href="https://codenameakshay.tech">CodeNameAkshay</a> /
+                Powered by <a href="https://gohugo.io/">Hugo</a></span>
+        </p>
+        <p class="footer-copyright">
+            <span><a href="https://codenameakshay.tech">www.codenameakshay.tech</a></span>
+        </p>
+        
+    </div>
+</footer>
+
+<script src="/js/jquery-1.11.3.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/scripts.js"></script>
+</body>
+
+</html>

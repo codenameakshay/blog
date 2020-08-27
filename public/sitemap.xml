@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-05-13T14:34:44+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/05/13/figma/</loc>
+    <lastmod>2020-05-13T14:34:44+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-05-13T14:34:44+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/04/28/telepybot/</loc>
+    <lastmod>2020-04-28T19:44:51+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/04/28/loading/</loc>
+    <lastmod>2020-04-28T16:11:14+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/04/16/corona/</loc>
+    <lastmod>2020-04-16T00:38:14+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/04/08/wsl/</loc>
+    <lastmod>2020-04-08T12:01:51+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/04/06/flutter/</loc>
+    <lastmod>2020-04-06T16:45:05+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/04/05/welcome/</loc>
+    <lastmod>2020-04-05T15:23:57+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+  </url>
+  
+  <url>
+    <loc>/authors/akshay-maurya/</loc>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+</urlset>

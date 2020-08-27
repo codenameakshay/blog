@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Creating a simple Telegram Bot with Python &middot; Akshay Maurya</title>
+        <meta name="description" content="Automating a simple Telegram bot can let you serve different types of data to various people including channels and group of which you are a part. I use my bot to serve my channel members Tech related news directly. Today I am going to share on how you can make such a simple EchoBot and deploy it on Heroku, so that it works 24x7. So without any further ado, let&rsquo;s get started.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.68.3" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Creating a simple Telegram Bot with Python">
+<meta property="og:description" content="Automating a simple Telegram bot can let you serve different types of data to various people including channels and group of which you are a part. I use my bot to serve my channel members Tech related news directly. Today I am going to share on how you can make such a simple EchoBot and deploy it on Heroku, so that it works 24x7. So without any further ado, let&rsquo;s get started.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/2020/04/28/telepybot/">
+        <link rel="stylesheet" href="/dist/site.css">
+        <link rel="stylesheet" href="/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="CodeNameAkshay&#39;s Blog" href="/">CodeNameAkshay&#39;s Blog</a>
+                            </h1>
+                        
+                        <a class="button-square" href="/index.xml"><i class="fa fa-rss" style="color: rgb(21, 21, 21);"></i></a>
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Facebook" title="Facebook" href="https://www.facebook.com/akshay.maurya.180" rel="me">
+                                <i class="fa fa-facebook" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/codenameakshay/" rel="me">
+                                <i class="fa fa-github-alt" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/akshay-maurya-b56664170/" rel="me">
+                                <i class="fa fa-linkedin" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:akshaymaurya3006@gmail.com">
+                                <i class="fa fa-envelope" style="color: rgb(21, 21, 21);"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Projects" href="https://www.github.com/codenameakshay">Projects</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Mail" href="mailto:ak@codenameakshay.tech">Mail</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Creating a simple Telegram Bot with Python</h1>
+    
+    <p class="post-date">
+        <span>Published <time datetime="2020-04-28" itemprop="datePublished">Tue, Apr 28, 2020</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="/about/" itemprop="url" rel="author">Akshay Maurya</a>
+            </span>
+        </span>
+    </p>
+    
+        <p class="post-reading post-line">
+            <span>Estimated reading time: 5 min</span>
+        </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Automating a simple Telegram bot can let you serve different types of data to various people including channels and group of which you are a part. I use my bot to serve my <a href="https://t.me/codenametech">channel</a> members Tech related news directly. Today I am going to share on how you can make such a simple EchoBot and deploy it on Heroku, so that it works 24x7. So without any further ado, let&rsquo;s get started.</p>
+<h1 id="step-1-talk-to-the-botfather">Step-1 Talk to the BotFather</h1>
+<p><img src="/images/echobot/1.png" alt=""></p>
+<p>Go to the BotFather (@BotFather) on Telegram and then type <code>/start</code>.
+<img src="/images/echobot/2.png" alt="">
+After that just type <code>/newbot</code> to create your first bot. Then give it a name and other information like its address. The BotFather will also give you the <code>API Token</code> for your bot, save it, we need it in a couple of minutes.
+<img src="/images/echobot/3.png" alt=""></p>
+<h1 id="step-2-talk-to-your-bot">Step-2 Talk to your bot</h1>
+<p>Now go to the address of your bot and type <code>/start</code> and send it. Now type anything that you like, it is just for making sure that your unique user id gets stored with the bot.
+<img src="/images/echobot/4.png" alt=""></p>
+<h1 id="step-3-finding-the-user-id">Step-3 Finding the user id</h1>
+<p>Now got to this link <code>https://api.telegram.org/bot[YOUR_API_TOKEN]/getUpdates</code> just replace [YOUR_API_TOKEN] by your <code>API Token</code>.
+Here you will see the message that you sent to your bot, now simply just copy the user ID and store it for later use.</p>
+<h1 id="step-4-getting-started-with-python">Step-4 Getting Started with Python</h1>
+<p>Now simply create a directory where you will be going to store your code and open <code>VSCode</code> or any other editor in it.
+Then type <code>python -m venv botenv/</code> to create a virtual environment for your code.
+Then you need to activate it by simply typing <code>source botenv/Scripts/activate</code> in you command shell.
+Now we need the following modules for our project so get ahead and download them.</p>
+<pre><code>pip install flask
+pip install python-telegram-bot
+pip install requests
+pip install bs4
+pip install telegram
+</code></pre><p>Now that you have installed the modules, simply create your project directory tree like this,</p>
+<pre><code>.
+├── app.py
+├── telebot
+│   ├── credentials.py
+│   |   .
+│   |   you can build your engine here
+│   |   .
+│   └── __init__.py
+└── botenv
+</code></pre><h1 id="step-5-creating-the-credentialspy-file">Step-5 Creating the <code>credentials.py</code> file</h1>
+<p>Simply write these lines of code in <code>credentials.py</code>,</p>
+<pre><code>bot_token = &quot;here goes your access token from BotFather&quot;
+bot_user_name = &quot;the username you entered&quot;
+URL = &quot;the heroku app link that we will create later&quot;
+</code></pre><h1 id="step-6-creating-the-apppy-file">Step-6 Creating the <code>app.py</code> file</h1>
+<p>Now go to your <code>app.py</code> file and write this in it,</p>
+<pre><code>from flask import Flask, request
+import telegram
+from telebot.credentials import bot_token, bot_user_name,URL
+</code></pre><pre><code>global bot
+global TOKEN
+TOKEN = bot_token
+bot = telegram.Bot(token=TOKEN)
+</code></pre><p>Now to start our Flask app, write this also in <code>app.py</code>,</p>
+<pre><code>app = Flask(__name__)
+</code></pre><h1 id="step-7-defining-functions">Step-7 Defining functions</h1>
+<p>Now we will be creating the functions which get called when anybody talks to the bot.</p>
+<pre><code>@app.route('/{}'.format(TOKEN), methods=['POST'])
+def respond():
+   update = telegram.Update.de_json(request.get_json(force=True), bot)
+   chat_id = update.message.chat.id
+   msg_id = update.message.message_id
+   text = update.message.text.encode('utf-8').decode()
+   print(&quot;got text message :&quot;, text)
+   if text == &quot;/start&quot;:
+       bot_welcome = &quot;&quot;&quot;
+       Welcome to CNA bot, this bot print the same message that you type. Try it out by typing and sending anything. Developed by @CodeName_Akshay&quot;
+       &quot;&quot;&quot;
+       bot.sendMessage(chat_id=chat_id, text=bot_welcome, reply_to_message_id=msg_id)
+   else:
+       bot.sendMessage(chat_id=chat_id, text=text, reply_to_message_id=msg_id)
+   return 'ok'
+</code></pre><p>This function below basically lets you start the bot. We will see later how to call this function.</p>
+<pre><code>@app.route('/setwebhook', methods=['GET', 'POST'])
+def set_webhook():
+    # we use the bot object to link the bot to our app which live
+    # in the link provided by URL
+    s = bot.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
+    # something to let us know things work
+    if s:
+        return &quot;webhook setup ok&quot;
+    else:
+        return &quot;webhook setup failed&quot;
+</code></pre><p>To create a homepage for your bot on Heroku, we will define a function that just prints a <code>period</code> on the mainpage.</p>
+<pre><code>@app.route('/')
+def index():
+    return '.'
+if __name__ == '__main__':
+    # note the threaded arg which allow
+    # your app to have more than one thread
+    app.run(threaded=True)
+</code></pre><p>Now your basic bot is complete.</p>
+<h1 id="step-8-initializing-launch-of-the-bot-on-heroku">Step-8 Initializing launch of the bot on Heroku</h1>
+<p>First we need a way to make sure that <code>Heroku</code> knows the requirements we need, so run this command.</p>
+<pre><code>pip freeze &gt; requirements.txt
+</code></pre><p>Now we need the <code>Procfile</code> which tells Heroku where our app starts, so create a <code>Procfile</code> file and add the following command,</p>
+<pre><code>web: gunicorn app:app
+</code></pre><p>Now save everything and then go to your <code>Heroku Dashboard</code> and create a new app. Once you do, it will direct you to the Deploy page. Then, open the Settings tab in a new window and copy the domain of the app which will be something like <code>https://appname.herokuapp.com/</code>and paste it in the <code>URL</code> variable inside <code>credentials.py</code>.</p>
+<h1 id="step-9-launching-the-bot-on-heroku">Step-9 Launching the bot on Heroku</h1>
+<p>First login into your <code>Heroku</code> account by the following command,</p>
+<pre><code>heroku login
+</code></pre><p>Then initialize a <code>Git</code> repository in your directory by the following commands,</p>
+<pre><code>git init
+heroku git:remote -a [heroku-project-name]
+</code></pre><p>Replace <code>[heroku-project-name]</code> by your project name.</p>
+<p>Now deploy the app by the following commands,</p>
+<pre><code>git add .
+git commit -m &quot;first commit&quot;
+git push heroku master
+</code></pre><p>Now after it completes pushing, simply navigate to <code>https://yourappname.herokuapp.com/setwebhook</code> to start the bot.
+If you see <code>webhook setup ok</code> that means you are ready to chat with your bot.</p>
+<h1 id="step-10-chatting-with-the-bot">Step-10 Chatting with the bot</h1>
+<p>Now you can go to your bot and simply type in a message and wait for it&rsquo;s reply. It will reply the same text. This is called an Echo bot. You can now explore the possibilities, just by changing the definition of the <code>respond()</code> function you can make your bot do alot of cool stuff.</p>
+<p><img src="/images/echobot/demo.gif" alt="">
+In the next part of this blog, I will tell you how I made my own news serving bot, so Stay Tuned.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+    
+
+    <div class="share">
+        
+            <a class="icon-twitter" href="https://twitter.com/share?text=Creating%20a%20simple%20Telegram%20Bot%20with%20Python&url=%2f2020%2f04%2f28%2ftelepybot%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-twitter"  style="color: rgb(21, 21, 21);"></i>
+                <span class="hidden">Twitter</span>
+            </a>
+        
+
+        
+            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2f2020%2f04%2f28%2ftelepybot%2f"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="fa fa-facebook"  style="color: rgb(21, 21, 21);"></i>
+                <span class="hidden">Facebook</span>
+            </a>
+        
+
+        
+            <a class="icon-google-plus" href="https://plus.google.com/share?url=%2f2020%2f04%2f28%2ftelepybot%2f"
+              onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+              <i class="fa fa-google-plus"  style="color:rgb(21, 21, 21);"></i>
+                <span class="hidden">Google+</span>
+            </a>
+        
+        
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+</div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="site-title-wrapper">
+            <h1 class="site-title">
+                <a title="CodeNameAkshay&#39;s Blog" href="/">CodeNameAkshay&#39;s Blog</a>
+            </h1>
+            <a class="button-square button-jump-top js-jump-top" href="#">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+
+        <p class="footer-copyright">
+            <span>&copy; 2020 <a href="https://codenameakshay.tech">CodeNameAkshay</a> /
+                Powered by <a href="https://gohugo.io/">Hugo</a></span>
+        </p>
+        <p class="footer-copyright">
+            <span><a href="https://codenameakshay.tech">www.codenameakshay.tech</a></span>
+        </p>
+        
+    </div>
+</footer>
+
+<script src="/js/jquery-1.11.3.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script src="/js/scripts.js"></script>
+</body>
+
+</html>
